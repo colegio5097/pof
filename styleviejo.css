@@ -1,0 +1,367 @@
+/* Basic Reset & Body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f8f8;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+#sidebar {
+    background: #fff;
+    width: 300px;
+    padding: 2.5em 0;
+    box-shadow: 0 0 0.5em rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+#sidebar .inner {
+    padding: 0 2.5em;
+}
+
+#sidebar .inner > section,
+#sidebar .inner > nav {
+    margin-bottom: 3em;
+}
+
+/* Search */
+#search input[type="text"] {
+    border: none;
+    background: #f0f0f0;
+    width: 100%;
+    padding: 0.8em 1em;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Menu */
+#menu header.major h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu ul li {
+    margin-bottom: 0.5em;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: #777;
+    display: block;
+    padding: 0.5em 0;
+    transition: color 0.2s ease-in-out;
+}
+
+#menu ul li a:hover {
+    color: #e27d60; /* Highlight color */
+}
+
+#menu ul li .opener {
+    cursor: pointer;
+    display: block;
+    padding: 0.5em 0;
+    color: #777;
+    position: relative;
+}
+
+#menu ul li .opener::after {
+    content: '\f078'; /* Chevron down icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+#menu ul li.active .opener::after {
+    transform: rotate(180deg);
+}
+
+#menu ul ul {
+    padding-left: 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+#menu ul li.active ul {
+    max-height: 200px; /* Adjust as needed */
+}
+
+/* Footer (optional) */
+#sidebar #footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 3em;
+}
+
+#sidebar #footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+/* Main Content */
+#main {
+    flex-grow: 1;
+    padding: 2.5em;
+}
+
+#main .inner {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5em;
+    margin-bottom: 3em;
+}
+
+#header .logo {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+#header .logo strong {
+    color: #e27d60;
+}
+
+#header .icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#header .icons li {
+    margin-left: 1em;
+}
+
+#header .icons li a {
+    color: #999;
+    font-size: 1.2em;
+    transition: color 0.2s ease-in-out;
+}
+
+#header .icons li a:hover {
+    color: #e27d60;
+}
+
+/* Banner */
+#banner {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 3em;
+    border-radius: 8px;
+    box-shadow: 0 0.25em 1em rgba(0,0,0,0.05);
+}
+
+#banner .content {
+    flex: 1;
+    padding-right: 3em;
+}
+
+#banner .content header h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin-bottom: 0.2em;
+    color: #333;
+}
+
+#banner .content header p {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 1.5em;
+}
+
+#banner .content p {
+    color: #555;
+    margin-bottom: 2em;
+}
+
+#banner .actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#banner .actions li {
+    display: inline-block;
+}
+
+#banner .button {
+    background: #e27d60;
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#banner .button:hover {
+    background: #d46a50;
+}
+
+#banner .image {
+    width: 400px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#banner .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5em 0;
+    }
+    #sidebar .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.5em;
+    }
+    #sidebar .inner > section,
+    #sidebar .inner > nav {
+        margin-bottom: 1.5em;
+        width: 100%;
+        text-align: center;
+    }
+    #main {
+        padding: 1.5em;
+    }
+    #header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1em;
+        margin-bottom: 2em;
+    }
+    #header .logo {
+        margin-bottom: 1em;
+    }
+    #banner {
+        flex-direction: column-reverse; /* Image on top for mobile */
+        padding: 2em;
+    }
+    #banner .content {
+
+    color: #555;
+    margin-bottom: 0.3em; /* Ajusta este valor (e.g., 0.1em, 0.5em) */
+    
+    /* Opcional: Ajustar la altura de la línea si el texto se ve muy espaciado verticalmente */
+    line-height: 1.2; /* El valor por defecto suele ser 1.6, 1.2 es más compacto */
+   
+    /* Usar flexbox para alinear el "título" (Directora:, Vice Director:, etc.) con el "valor" (el nombre) */
+    display: flex;
+    justify-content: space-between; /* Intenta alinear automáticamente el texto */
+    padding-right: 1em; /* Añade un pequeño espacio a la derecha */
+    }
+    #banner .image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.staff-info p span:first-child {
+    /* Pone el texto en negrita (más grueso) */
+    font-weight: bold; 
+    
+    /* Pone el texto más oscuro (negro o gris muy oscuro) */
+    color: #333; 
+    
+    /* Mantiene el espaciado para la alineación */
+    padding-right: 1em;
+}
+
+/* Opcional, solo si quieres que los nombres sean un poco más claros */
+.staff-info p span:last-child {
+    color: #555; 
+}
+
+/* Para referencia, la configuración de la lista de personal (Flexbox y espaciado reducido) */
+.staff-info p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3em; /* Controla el interlineado (reducido) */
+    line-height: 1.2;
+}
+
+
+@media screen and (max-width: 736px) {
+    #sidebar .inner {
+        padding: 0 1em;
+    }
+    #search input[type="text"] {
+        padding: 0.6em 0.8em;
+    }
+    #menu header.major h2 {
+        font-size: 1.1em;
+    }
+    #menu ul li a,
+    #menu ul li .opener {
+        font-size: 0.75em;
+    }
+    #main {
+        padding: 1em;
+    }
+    #header .logo {
+        font-size: 1.1em;
+    }
+    #header .icons li {
+        margin-left: 0.8em;
+    }
+    #header .icons li a {
+        font-size: 1em;
+    }
+    #banner {
+        padding: 1.2em;
+    }
+    #banner .content header h1 {
+        font-size: 1.2em;
+    }
+    #banner .content header p {
+        font-size: 1em;
+    }
+    #banner .button {
+        padding: 0.8em 1.5em;
+        font-size: 0.9em;
+    }
+/* Estilos para el cargo (el primer <span>) */
+
+}

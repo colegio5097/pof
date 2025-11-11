@@ -1,0 +1,254 @@
+/* Paleta de colores: 
+   #4E342E (Marrón Oscuro/Café) - Fondo principal de la barra lateral
+   #6D4C41 (Marrón Medio) - Fondos de elementos hover y secundarios
+   #212121 (Negro Casi Puro) - Títulos, textos importantes, Header
+   #f4f4f4 (Gris Claro) - Fondo del cuerpo y del contenido principal
+   #fff (Blanco) - Textos en fondos oscuros
+*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo claro para el cuerpo */
+    display: flex;
+    min-height: 100vh;
+}
+
+
+
+#wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+#sidebar {
+    width: 280px;
+    background-color: #4E342E; /* Marrón Oscuro */
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra intensa */
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar .inner {
+    flex-grow: 1;
+}
+
+/* Estilo del logo en la barra lateral */
+.logo-sidebar {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #6D4C41; /* Separador marrón */
+    margin-bottom: 20px;
+}
+.logo-sidebar img {
+    width: 120px; /* Tamaño un poco más grande para el logo */
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+
+#sidebar h3 {
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 5px;
+}
+
+#sidebar ul li a, #sidebar ul li .opener {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+#sidebar ul li a:hover, #sidebar ul li .opener:hover {
+    background-color: #6D4C41; /* Marrón Medio al pasar el mouse */
+}
+
+#sidebar ul li.active .opener + ul {
+    display: block;
+}
+
+#sidebar ul ul {
+    display: none;
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+#sidebar ul ul li a {
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Ligeramente transparente */
+}
+
+#sidebar ul ul li a:hover {
+    background-color: #6D4C41;
+}
+
+/* Estilo del buscador */
+#search {
+    margin-bottom: 20px;
+}
+#search input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#search input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+/* --- Contenido Principal (Main) --- */
+#main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* --- Header Superior --- */
+#header {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #212121; /* Negro para el texto del logo */
+    text-decoration: none;
+}
+#header .logo strong {
+    color: #4E342E; /* Acento marrón para el número de escuela */
+}
+
+
+#header .icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#header .icons li {
+    margin-left: 15px;
+}
+
+#header .icons li a {
+    color: #212121;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+#header .icons li a:hover {
+    color: #4E342E; /* Marrón al pasar el mouse */
+}
+
+/* --- Banner (Fondo de Imagen y Texto) --- */
+#banner {
+    background-image: url('LOGO ESCUELA.jpg'); /* Imagen de fondo: LOGO ESCUELA.jpg */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Altura mínima para mostrar bien la imagen */
+    padding: 50px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Capa de oscurecimiento (overlay) para mejor legibilidad */
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(33, 33, 33, 0.7); /* Negro semi-transparente (70%) */
+    border-radius: 8px;
+}
+
+#banner .staff-info {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco casi sólido para el texto */
+    padding: 30px;
+    border-radius: 8px;
+    color: #212121;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#banner .staff-info header {
+    border-bottom: 2px solid #4E342E; /* Línea separadora marrón */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+#banner h1 {
+    color: #4E342E; /* Título principal en marrón */
+    margin-bottom: 5px;
+}
+#banner h2 {
+    color: #212121;
+    margin-bottom: 0;
+}
+
+#banner p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 5px 0;
+    color: #212121;
+}
+
+/* Ajuste de alineación para la información del staff */
+#banner p span:first-child {
+    font-weight: bold;
+    color: #4E342E; /* Etiquetas en marrón */
+    display: inline-block;
+    width: 140px; /* Aumentado para mejor alineación */
+}
+
+/* --- Footer --- */
+#footer {
+    text-align: center;
+    padding: 10px 0 0;
+    border-top: 1px solid #6D4C41;
+    color: #aaa;
+    font-size: 0.85em;
+    margin-top: 20px;
+}
+
+#footer p {
+    margin: 0;
+}
